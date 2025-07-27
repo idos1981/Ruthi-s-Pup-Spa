@@ -1,0 +1,395 @@
+/*
+ * Stylesheet for the dog wash & grooming website
+ *
+ * This file defines the layout, typography and color palette used throughout
+ * the site. The design follows a clean and modern aesthetic with plenty of
+ * whitespace, soft colors and simple typography. Buttons use vibrant accents
+ * to draw attention to calls to action.
+ */
+
+/* Reset basic elements */
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    color: #333;
+    /* Use a very light green background to support our natural colour scheme */
+    background-color: #f7fbf7;
+    line-height: 1.6;
+}
+
+a {
+    color: #0068a5;
+    text-decoration: none;
+    transition: color 0.2s ease;
+}
+
+a:hover {
+    color: #004e7a;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* Navigation bar */
+.navbar {
+    background-color: #ffffff;
+    border-bottom: 1px solid #e2e8f0;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.nav-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 64px;
+}
+
+.logo {
+    font-size: 1.4rem;
+    font-weight: 600;
+    /* Primary brand colour: deep natural green */
+    color: #2f855a;
+}
+
+.nav-links {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    gap: 24px;
+}
+
+.nav-links li a {
+    font-weight: 500;
+    padding: 8px 0;
+    display: block;
+    position: relative;
+}
+
+.nav-links li a::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -2px;
+    width: 0;
+    height: 2px;
+    /* Underline highlight colour: medium green */
+    background-color: #68a36d;
+    transition: width 0.3s;
+}
+
+.nav-links li a:hover::after {
+    width: 100%;
+}
+
+/* Hero section */
+.hero {
+    /* Use an image of a pup spa for the background with a soft gradient overlay */
+    background: linear-gradient(rgba(255, 255, 255, 0.8), rgba(255, 255, 255, 0.8)), url('hero.png') center/cover no-repeat;
+    height: 70vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: #1f3f29;
+    position: relative;
+    padding-top: 64px; /* offset for sticky nav */
+}
+
+.hero-content h1 {
+    font-size: 2.6rem;
+    margin-bottom: 10px;
+    font-weight: 700;
+}
+
+.hero-content p {
+    font-size: 1.2rem;
+    margin-bottom: 24px;
+}
+
+/* Buttons */
+.btn {
+    display: inline-block;
+    padding: 12px 28px;
+    border-radius: 4px;
+    font-size: 1rem;
+    text-align: center;
+    cursor: pointer;
+    transition: background-color 0.2s ease, transform 0.1s ease;
+}
+
+/* Buttons */
+.btn-primary {
+    background-color: #2f855a;
+    color: #ffffff;
+    border: none;
+}
+
+.btn-primary:hover {
+    background-color: #276749;
+}
+
+.btn-secondary {
+    background-color: #f0f9f0;
+    color: #2f855a;
+    border: 1px solid #cbd5e1;
+}
+
+.btn-secondary:hover {
+    background-color: #e6f4ea;
+}
+
+/* Section headings */
+h2 {
+    font-size: 2rem;
+    margin: 0 0 24px 0;
+    color: #0d274d;
+    text-align: center;
+    position: relative;
+}
+
+h2::after {
+    content: "";
+    width: 60px;
+    height: 3px;
+    background-color: #2f855a;
+    display: block;
+    margin: 16px auto 0;
+    border-radius: 2px;
+}
+
+/* Services */
+.services {
+    padding: 60px 0;
+    background-color: #ffffff;
+}
+
+.service-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 30px;
+    margin-top: 32px;
+}
+
+.card {
+    background-color: #f7f9fb;
+    border: 1px solid #e2e8f0;
+    border-radius: 8px;
+    padding: 30px 20px;
+    text-align: center;
+    transition: transform 0.2s ease;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+}
+
+.card i {
+    font-size: 2.5rem;
+    color: #2f855a;
+    margin-bottom: 16px;
+}
+
+.card h3 {
+    margin: 0 0 12px 0;
+    color: #0d274d;
+}
+
+.card p {
+    font-size: 0.95rem;
+    color: #465770;
+}
+
+/* Pricing */
+.pricing {
+    padding: 60px 0;
+    background-color: #f0f5fa;
+}
+
+.pricing-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 30px;
+    margin-top: 32px;
+}
+
+.pricing-item {
+    background-color: #ffffff;
+    border: 1px solid #e2e8f0;
+    border-radius: 8px;
+    text-align: center;
+    padding: 40px 20px;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.pricing-item h3 {
+    margin: 0 0 8px 0;
+    color: #0d274d;
+}
+
+.price {
+    font-size: 2rem;
+    font-weight: 700;
+    margin: 16px 0;
+    color: #2f855a;
+}
+
+.pricing-item p {
+    margin: 8px 0 20px 0;
+    color: #465770;
+}
+
+.pricing-item .btn {
+    margin-top: auto;
+}
+
+/* Booking */
+.booking {
+    padding: 60px 0;
+    background-color: #ffffff;
+}
+
+.booking-form {
+    max-width: 500px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.booking-form label {
+    font-weight: 500;
+    color: #0d274d;
+}
+
+.booking-form select,
+.booking-form input[type="date"],
+.booking-form input[type="time"] {
+    padding: 10px;
+    border: 1px solid #cbd5e1;
+    border-radius: 4px;
+    font-size: 1rem;
+}
+
+.booking-form select:focus,
+.booking-form input[type="date"]:focus,
+.booking-form input[type="time"]:focus {
+    outline: none;
+    border-color: #2f855a;
+    box-shadow: 0 0 0 2px rgba(47, 133, 90, 0.2);
+}
+
+/* Gallery */
+.gallery {
+    padding: 60px 0;
+    background-color: #ffffff;
+}
+
+.gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+    margin-top: 32px;
+}
+
+.gallery-grid img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+    transition: transform 0.3s ease;
+}
+
+.gallery-grid img:hover {
+    transform: scale(1.03);
+}
+
+/* About section */
+.about {
+    padding: 60px 0;
+    background-color: #f0f9f0;
+    text-align: center;
+}
+
+.about p {
+    max-width: 800px;
+    margin: 0 auto;
+    color: #465770;
+    line-height: 1.7;
+}
+
+.booking-note {
+    max-width: 600px;
+    margin: 0 auto 24px auto;
+    text-align: center;
+    color: #465770;
+}
+
+.payment-section {
+    text-align: center;
+    margin-top: 24px;
+}
+
+.hidden {
+    display: none;
+}
+
+/* Contact */
+.contact {
+    padding: 60px 0;
+    background-color: #f0f5fa;
+    text-align: center;
+}
+
+.contact p {
+    margin: 8px 0;
+    color: #465770;
+}
+
+.contact a {
+    color: #2f855a;
+    font-weight: 500;
+}
+
+.contact a:hover {
+    color: #276749;
+}
+
+/* Footer */
+.footer {
+    background-color: #ffffff;
+    border-top: 1px solid #e2e8f0;
+    padding: 20px 0;
+    text-align: center;
+    color: #6b7a99;
+    font-size: 0.9rem;
+}
+
+/* Responsive tweaks */
+@media (max-width: 768px) {
+    .nav-links {
+        gap: 16px;
+    }
+    .hero-content h1 {
+        font-size: 2.2rem;
+    }
+    .pricing-grid {
+        grid-template-columns: 1fr;
+    }
+    .service-cards {
+        grid-template-columns: 1fr;
+    }
+}

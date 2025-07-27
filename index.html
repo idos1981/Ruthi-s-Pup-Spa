@@ -1,0 +1,179 @@
+<!--
+  Professional dog wash & grooming website
+
+  This website is designed as a clean, modern landing page for a dog wash and grooming
+  business. It includes a hero section, service descriptions, pricing, a booking and
+  payment form, and contact information. Payment is handled via Square. To make
+  payments functional, replace the placeholder href values in script.js or the
+  booking section with your actual Square payment links or integrate the Square
+  Web Payments SDK.
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ruthi’s Pup Spa</title>
+    <!-- Link to the site stylesheet -->
+    <link rel="stylesheet" href="style.css">
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" integrity="sha512-cjO28uCx1SzPl15/4Y++DuH1E9sKsORxKkAgxMDyG+f8jQpbTO0FvtKfOSeWhLk+FH5iaUy0c5tYKs1XPTX68g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<body>
+    <!-- Navigation bar -->
+    <header class="navbar">
+        <div class="container nav-container">
+            <div class="logo">Ruthi’s Pup Spa</div>
+            <nav>
+                <ul class="nav-links">
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#services">Services</a></li>
+                    <li><a href="#gallery">Gallery</a></li>
+                    <li><a href="#book">Book</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero section -->
+    <section id="home" class="hero">
+        <div class="container hero-content">
+            <h1>Welcome to Ruthi’s Pup Spa</h1>
+            <p>Where every dog is treated like family</p>
+            <a href="#book" class="btn btn-primary">Book Now</a>
+        </div>
+    </section>
+
+    <!-- About section -->
+    <section id="about" class="about">
+        <div class="container">
+            <h2>About Us</h2>
+            <p>Ruthi’s Pup Spa is a locally owned and operated grooming boutique in Oklahoma City. Our mission is simple: provide a calm, loving environment where your pup can look and feel their best. We use gentle, natural products and take the time to get to know each dog’s unique personality. Whether your furry friend needs a quick wash or a full pampering session, our experienced team will ensure they leave wagging their tail.</p>
+        </div>
+    </section>
+
+    <!-- Services section -->
+    <section id="services" class="services">
+        <div class="container">
+            <h2>Our Services</h2>
+            <div class="service-cards">
+                <div class="card">
+                    <h3>Wash</h3>
+                    <p>A gentle bath using premium, natural shampoo followed by a fluff dry and brush out.</p>
+                </div>
+                <div class="card">
+                    <h3>Teeth Brushing Add‑on</h3>
+                    <p>Freshen your pup’s breath with a thorough brushing using pet-safe toothpaste.</p>
+                </div>
+                <div class="card">
+                    <h3>Nail Clipping Add‑on</h3>
+                    <p>Keep paws healthy with a quick and comfortable nail trim and file.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pricing section -->
+    <section id="pricing" class="pricing">
+        <div class="container">
+            <h2>Pricing</h2>
+            <div class="pricing-grid">
+                <div class="pricing-item">
+                    <h3>Wash</h3>
+                    <p class="price">$30</p>
+                    <p>30–40 minutes.</p>
+                    <a href="#book" class="btn btn-secondary">Select</a>
+                </div>
+                <div class="pricing-item">
+                    <h3>Teeth Brushing Add‑on</h3>
+                    <p class="price">+$5</p>
+                    <p>Add 5 minutes.</p>
+                    <a href="#book" class="btn btn-secondary">Select</a>
+                </div>
+                <div class="pricing-item">
+                    <h3>Nail Clipping Add‑on</h3>
+                    <p class="price">+$5</p>
+                    <p>Add 5 minutes.</p>
+                    <a href="#book" class="btn btn-secondary">Select</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Booking section -->
+    <section id="book" class="booking">
+        <div class="container">
+            <h2>Book Your Appointment</h2>
+            <p class="booking-note">Fill in your details, choose your add‑ons and preferred time. You’ll be redirected to a secure Square checkout to complete your payment. We’ll send a confirmation via email and text once we receive your booking.</p>
+            <form id="booking-form" class="booking-form">
+                <label for="name-input">Your Name</label>
+                <input type="text" id="name-input" name="name" placeholder="Jane Doe" required>
+
+                <label for="email-input">Email Address</label>
+                <input type="email" id="email-input" name="email" placeholder="you@example.com" required>
+
+                <label for="phone-input">Phone Number</label>
+                <input type="tel" id="phone-input" name="phone" placeholder="(405) 555‑0123" required>
+
+                <label for="addon-teeth">
+                    <input type="checkbox" id="addon-teeth" name="addons" value="teeth"> Teeth Brushing Add‑on (+$5)
+                </label>
+                <label for="addon-nail">
+                    <input type="checkbox" id="addon-nail" name="addons" value="nail"> Nail Clipping Add‑on (+$5)
+                </label>
+
+                <label for="date-input">Preferred Date</label>
+                <input type="date" id="date-input" name="date" required>
+
+                <label for="time-input">Preferred Time</label>
+                <input type="time" id="time-input" name="time" required>
+
+                <button type="submit" class="btn btn-primary">Proceed to Payment</button>
+            </form>
+            <div id="payment-section" class="payment-section hidden">
+                <p>Click the button below to pay securely with Square. You will be taken to a Square checkout page.</p>
+                <a id="square-link" class="btn btn-primary" href="#" target="_blank">Pay with Square</a>
+                <p style="margin-top: 16px;">If you'd like to notify us immediately, <a id="notify-link" href="#">send your booking details via email</a>.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Gallery section -->
+    <section id="gallery" class="gallery">
+        <div class="container">
+            <h2>Gallery</h2>
+            <div class="gallery-grid">
+                <img src="hero.png" alt="Dog receiving a relaxing wash">
+                <img src="gallery1.png" alt="Dog being groomed with scissors">
+                <img src="gallery2.png" alt="Dog having its nails trimmed">
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact section -->
+    <section id="contact" class="contact">
+        <div class="container">
+            <h2>Contact Us</h2>
+            <p>Have questions or need help booking? Get in touch!</p>
+            <!-- Replace the following details with your actual business information -->
+            <p>Email: <a href="mailto:info@ruthispupspa.com">info@ruthispupspa.com</a></p>
+            <p>Phone: <a href="tel:+14055550123">+1&nbsp;(405)&nbsp;555‑0123</a></p>
+            <p>Address: 123&nbsp;Pup&nbsp;Lane, Oklahoma&nbsp;City, OK&nbsp;73102</p>
+            <p>Hours: Monday–Friday 9am–6pm, Saturday 10am–4pm</p>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2025 Ruthi’s Pup Spa. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script src="script.js"></script>
+</body>
+</html>
