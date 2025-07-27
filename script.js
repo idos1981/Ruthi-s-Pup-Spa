@@ -21,10 +21,10 @@ document.addEventListener('DOMContentLoaded', function () {
     // 'wash' is just the base wash service, 'wash_teeth' includes the teeth brushing add‑on,
     // 'wash_nail' includes the nail clipping add‑on, and 'wash_both' includes both add‑ons.
     const paymentLinks = {
-        wash: 'https://squareup.com/pay/https://square.link/u/1xQARbkK',
-        wash_teeth: 'https://squareup.com/pay/https://square.link/u/1xQARbkK',
-        wash_nail: 'https://squareup.com/pay/https://square.link/u/1xQARbkK',
-        wash_both: 'https://squareup.com/pay/https://square.link/u/1xQARbkK'
+        wash: 'https://square.link/u/1xQARbkK',
+        wash_teeth: 'https://square.link/u/1xQARbkK',
+        wash_nail: 'https://square.link/u/1xQARbkK',
+        wash_both: 'https://square.link/u/1xQARbkK'
     };
 
     form.addEventListener('submit', function (e) {
